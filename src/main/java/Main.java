@@ -25,6 +25,8 @@ public class Main {
 		Pair<Integer, Integer> dimension = Pair.with(4, 4);
 		Map<Integer, Pair<Integer, Integer>> entrances = new HashMap<>();
 		entrances.put(1, Pair.with(0, 1));
+		entrances.put(2, Pair.with(3, 3));
+		entrances.put(3, Pair.with(2, 0));
 
 		// initialize parkingLot objects and dependencies
 		RandomUtil randomUtil = RandomUtil.getInstance();
