@@ -57,10 +57,9 @@ public class ParkingSystemTest {
 		// given
 		Car car1 = new Car(1, Car.Size.SMALL);
 		parkingSystem.assignCar(1, car1, (long) 1657447200);
-		parkingSystem.freeCar(car1, (long)1657458000);
 		
 		// when
-		double fee = parkingSystem.getFee(car1);
+		double fee = parkingSystem.freeCar(car1, (long)1657458000);
 		
 		// then
 		assertThat(fee).isEqualTo(40.0);
@@ -71,10 +70,9 @@ public class ParkingSystemTest {
 		// given
 		Car car1 = new Car(1, Car.Size.SMALL);
 		parkingSystem.assignCar(1, car1, (long) 1657447200);
-		parkingSystem.freeCar(car1, (long)1657459800);
 		
 		// when
-		double fee = parkingSystem.getFee(car1);
+		double fee = parkingSystem.freeCar(car1, (long)1657459800);
 		
 		// then
 		assertThat(fee).isEqualTo(60.00);
@@ -85,10 +83,9 @@ public class ParkingSystemTest {
 		// given
 		Car car1 = new Car(1, Car.Size.SMALL);
 		parkingSystem.assignCar(1, car1, (long) 1657447200);
-		parkingSystem.freeCar(car1, (long)1657533600);
 		
 		// when
-		double fee = parkingSystem.getFee(car1);
+		double fee = parkingSystem.freeCar(car1, (long)1657533600);
 		
 		// then
 		assertThat(fee).isEqualTo(5000.00);
@@ -99,10 +96,9 @@ public class ParkingSystemTest {
 		// given
 		Car car1 = new Car(1, Car.Size.SMALL);
 		parkingSystem.assignCar(1, car1, (long) 1657447200);
-		parkingSystem.freeCar(car1, (long)1657535400);
 		
 		// when
-		double fee = parkingSystem.getFee(car1);
+		double fee = parkingSystem.freeCar(car1, (long)1657535400);
 		
 		// then
 		assertThat(fee).isEqualTo(5020.00);
