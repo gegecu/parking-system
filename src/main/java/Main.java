@@ -61,13 +61,13 @@ public class Main {
 		system.assignCar(1, car1, (long) 1657456200); // 10 July 2022 12:30:00 -- car1
 		printCarInfo(car1);
 		system.freeCar(car1, (long) 1657459800); // 10 July 2022 13:30:00 -- car1
-		system.freeCar(car2, (long) 1657459800); // 10 July 2022 13:30:00 -- car2
-		System.out.println("car2 fee: " + system.getFee(car2));
+		double car2Fee = system.freeCar(car2, (long) 1657459800); // 10 July 2022 13:30:00 -- car2
+		System.out.println("car2 fee: " + car2Fee);
 
 		system.assignCar(1, car1, (long) 1657460700); // 10 July 2022 13:45:00 -- car1
 		printCarInfo(car1);
-		system.freeCar(car1, (long) 1657464300); // 10 July 2022 14:45:00 -- car1
-		System.out.println("car1 fee: " + system.getFee(car1));
+		double car1Fee = system.freeCar(car1, (long) 1657464300); // 10 July 2022 14:45:00 -- car1
+		System.out.println("car1 fee: " + car1Fee);
 
 		/* -------------------- */
 		
@@ -77,10 +77,10 @@ public class Main {
 
 		system.assignCar(1, car1, (long) 1657647000); // 12 July 2022 17:30:00 -- car1
 		printCarInfo(car1);
-		system.freeCar(car1, (long) 1657650600); // 12 July 2022 18:30:00 -- car1
+		double car1Fee2 = system.freeCar(car1, (long) 1657650600); // 12 July 2022 18:30:00 -- car1
 		Transaction transaction = system.getTransaction(car1);
 		printCarTransaction(transaction, car1);
-		System.out.println("car1 fee: " + system.getFee(car1));
+		System.out.println("car1 fee: " + car1Fee2);
 	}
 
 	private static void printParkingSlots(List<ParkingSlot> parkingSlots) {

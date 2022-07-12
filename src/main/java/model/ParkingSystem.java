@@ -35,13 +35,15 @@ public class ParkingSystem {
 		}
 	}
 
-	public void freeCar(Car car, Long end) {
+	public double freeCar(Car car, Long end) {
 		Transaction transaction = this.carTransactionMap.get(car.getId());
 		if (transaction != null && transaction.isValidDeregister()) {
 			transaction.deregister(end);
 			car.getSlot().assignCar(null);
 			car.parkCar(null);
+			return this.getFee(car);
 		}
+		return 0.0;
 	}
 	
 	public Transaction getTransaction(Car car) {
